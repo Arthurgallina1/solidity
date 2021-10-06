@@ -1,3 +1,10 @@
+/* memory ⇒ Igual memória RAM (runtime), no solidity é um 
+espaço temporário para guardar dados entre as chamadas 
+da função, só pode ser chamada em funções e não em nível 
+de contrato. Um SC pode usar qlqr tamanho de
+memória durante a execução mas assim que a execução
+termina a memória é completamente limpa pra próxima
+execução.*/
 
 contract StringsAndArrays {
 
