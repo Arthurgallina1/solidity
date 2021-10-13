@@ -25,4 +25,24 @@ contract Conversion {
     bytes2 g = 0x1234;
     bytes4 h = bytes4(g); // h = 0x1234000
 
+
+    //Conver Ether Units
+    //Wei is the smallest denomination of ether
+
+    function test() public {
+        assert(10000000000000 wei == 1 ether);
+        assert(1 wei == 1);
+        assert(1 ether == 1e18);
+        // 1 ether = 1e18 
+    }
+
+    function timeExercise() public {
+        assert(1 minutes == 60 seconds);
+        assert(60 minutes == 1 hours);
+        assert(24 hours == 1440 minutes);
+        assert(1 weeks == 7 days);
+
+    }
+    
+
 }
