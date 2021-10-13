@@ -20,7 +20,7 @@ contract Conversion {
     // What is cost?
     // conversar para bytes menores custa 
     bytes2 e = 0x1234;
-    bytes1 f = bytes(1); //f = 0x12
+    bytes1 f = bytes1(e); //f = 0x12
     
     bytes2 g = 0x1234;
     bytes4 h = bytes4(g); // h = 0x1234000
