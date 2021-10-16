@@ -37,9 +37,37 @@ contract WithdralPattern {
     
     // a default fallback function is not payable - it will reject refunds
     //if one contract has a default fallback function would be wrong to refund this address -> it will not accept
+
+
+    
     fallback() public {
         
     }
-    
+}
 
+    //how does a contract find out if another addres is a contract?
+contract Victim {
+    function isItAContract() public view returns (bool) {
+        //if the are bytes of code greater than zero then its a contract
+        uint32 size;
+        address a = msg.sender;
+        //inline assembly acesses EVM at a low level
+        assembly {
+            //extcodesize retrieves size of the code
+            size := extcodesize(a)
+        }
+        return (size > 0);
+
+    }
+}
+
+contract Attacker {
+    bool public trickedYou;
+    Victim victim;
+
+    constructor(address _v) public {
+        // if you call the address from the construtor there are no bytes codes
+        victim = Victim(_v);
+        trickedYou = !victim.isItAContract();
+    }
 }
