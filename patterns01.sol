@@ -70,4 +70,6 @@ contract Attacker {
         victim = Victim(_v);
         trickedYou = !victim.isItAContract();
     }
+        //How to solve this? WITHDRAL PATTERN
+        
 }
